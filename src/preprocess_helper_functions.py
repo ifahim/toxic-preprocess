@@ -391,9 +391,9 @@ def replace_common_words_using_fuzzy(myword_list, word_dist_dict_most_common, wo
         if i%50000 == 0:
             print ("Done ", i)
         word_orig = item[0]
-        # if len(word_orig) > 30:
-        #     word = word_orig[:30]
-        # word = replace_all_non_alphanumeric_chars(word_orig)
+        if len(word_orig) > 30:
+            new_dict[word_orig] = word_orig
+            continue
         word = word_orig
         if word== '':
             new_dict[word_orig] = ''
@@ -442,12 +442,9 @@ def lemmatize_english_words(myword_list, wordnet_lemmatizer):
         if i%50000 == 0:
             print ("Done ", i)
         myword, count = item
-        # if len(myword) > 30:
-        #     myword = myword[:30]
-        # word = delete_all_non_alphabet_chars(word)
-        # if word== '':
-        #     new_dict[word_orig] = ''
-        #     continue
+        if len(myword) > 30:
+            new_dict[myword] = myword
+            continue
         lemmatized_word = wordnet_lemmatizer.lemmatize(myword)
         new_word = add_punct_in_the_end_of_a_word(myword, lemmatized_word)
         new_dict[myword] = new_word
@@ -465,12 +462,9 @@ def stemming_english_words(myword_list, stemmer):
         if i%50000 == 0:
             print ("Done ", i)
         myword, count = item
-        # if len(myword) > 30:
-        #     myword = myword[:30]
-        # word = delete_all_non_alphabet_chars(word)
-        # if word== '':
-        #     new_dict[word_orig] = ''
-        #     continue
+        if len(myword) > 30:
+            new_dict[myword] = myword
+            continue
         stemmed_word = stemmer.stem(myword)
         new_word = add_punct_in_the_end_of_a_word(myword, stemmed_word)
         new_dict[myword] = new_word
