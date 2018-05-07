@@ -421,10 +421,14 @@ def replace_common_words_using_fuzzy(myword_list, word_dist_dict_most_common, wo
         found, new_word = get_the_best_corresponding_word_using_fuzzy(word, common_words, matching_pct)
         if found == 1 and new_word == '':
             new_dict[word_orig] = new_word
+            continue
+        if new_word == '':
+            new_dict[word_orig] = word_orig
+            continue
         if found == 1 and new_word[0] == word[0]:
             new_word = add_punct_in_the_end_of_a_word(word_orig, new_word)
             new_dict[word_orig] = new_word
-            print (item, " ---> ", new_word)
+            #print (item, " ---> ", new_word)
             continue
         else:
             new_dict[word_orig] = word_orig
