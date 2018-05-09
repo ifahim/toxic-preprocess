@@ -128,7 +128,6 @@ def remove_rare_words_from_dict(word_count_list, word_dist_dict,
             new_dict[word] = word
     return new_dict
 
-
 #---------------------------------------
 def remove_non_alphanumeric_from_dict(word_count_list):
     regex = re.compile('[^a-zA-Z0-9]')
@@ -139,7 +138,6 @@ def remove_non_alphanumeric_from_dict(word_count_list):
         new_dict[item[0]] = new_str
     return new_dict
 
-
 #---------------------------------------
 def remove_non_alphabet_words(word_count_list):
     regex = re.compile('[^a-zA-Z]')
@@ -149,7 +147,6 @@ def remove_non_alphabet_words(word_count_list):
         new_str = regex.sub('', mystr)
         new_dict[item[0]] = new_str
     return new_dict
-
 
 #---------------------------------------
 def remove_words_containing_non_alphabets_from_dict(word_count_list):
