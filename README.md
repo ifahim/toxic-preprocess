@@ -1,6 +1,6 @@
 # toxic-preprocess
 
-###Cite this paper: 
+###Please cite this paper, if you this paper or code in this repo helped you. 
 
 **[Is preprocessing of text really worth your time for online comment classification?](https://arxiv.org/abs/1806.02908)**
 
